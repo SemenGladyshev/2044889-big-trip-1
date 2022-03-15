@@ -1,13 +1,13 @@
 const RenderPosition = {
-    BEFOREBEGIN: 'beforebegin',
-    AFTERBEGIN: 'afterbegin',
-    BEFOREEND: 'beforeend',
-    AFTEREND: 'afterend',
+  BEFOREBEGIN: 'beforebegin',
+  AFTERBEGIN: 'afterbegin',
+  BEFOREEND: 'beforeend',
+  AFTEREND: 'afterend',
 };
 
 const renderTemplate = (container, template, place) => {
-    container.insertAdjacentHTML(place, template);
-}
+  container.insertAdjacentHTML(place, template);
+};
 
-export { RenderPosition, renderTemplate }
+export { RenderPosition, renderTemplate };
 

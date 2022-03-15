@@ -1,5 +1,5 @@
 export const createFilterTemplate = () => (
-    `
+  `
     <body class="page-body">
     <header class="page-header">
       <div class="page-body__container  page-header__container">
@@ -250,4 +250,4 @@ export const createFilterTemplate = () => (
     </main>
   </body>
     `
-)
+);
