@@ -22,7 +22,6 @@ render(tripControlsNavigationElement, new TripTabsView().element, RenderPosition
 render(tripControlsFiltersElement, new TripFiltersView().element, RenderPosition.BEFOREEND);
 render(tripEventsElement, new TripSortView().element, RenderPosition.AFTERBEGIN);
 render(tripEventsListElement.element, new AddEventItemView(tripEvents[1]).element, RenderPosition.BEFOREEND);
-//render(tripEventsListElement, new AddEventItemView(tripEvents[0]).element, RenderPosition.BEFOREEND);
 
 const renderEvent = (eventListElement, event) => {
   const eventItemComponent = new TripEventItemView(event);
