@@ -81,7 +81,7 @@ export default class TripPresenter {
 
   #renderSort = () => {
     render(this.#tripPointsElement, this.#tripSortComponent, RenderPosition.AFTERBEGIN);
-    this.#tripSortComponent.serSortTypeChangeHandler(this.#handleSortTypeChange);
+    this.#tripSortComponent.setSortTypeChangeHandler(this.#handleSortTypeChange);
   }
 
   #renderTripPoint = (point) => {

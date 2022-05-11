@@ -25,7 +25,7 @@ const createTripEventTemplate = (event) => {
       return {
         days: resultDict.getUTCDate() - 1,
         hours: resultDict.getUTCHours(),
-        minutes: resultDict.getUTCMinutes,
+        minutes: resultDict.getUTCMinutes(),
       };
     };
 

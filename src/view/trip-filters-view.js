@@ -20,6 +20,6 @@ const createTripFiltersTemplate = () => (
 
 export default class FilterView extends AbstractView {
   get template() {
-    return createTripFiltersTemplate;
+    return createTripFiltersTemplate();
   }
 }
