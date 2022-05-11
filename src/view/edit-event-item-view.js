@@ -7,7 +7,7 @@ import flatpickr from 'flatpickr';
 import SmartView from './smart-view';
 
 const createEventEditTemplate = (point) => {
-  const {basePrice: price, dateStart: ISOFrom, dateEnd: ISOTo, location: location, type} = point;
+  const {basePrice: price, dateStart: ISOFrom, dateEnd: ISOTo, location, type} = point;
   const DatetimeFrom = dayjs(ISOFrom).format('DD/MM/YY HH:mm');
   const DatetimeTo = dayjs(ISOTo).format('DD/MM/YY HH:mm');
 
@@ -161,7 +161,7 @@ export default class EventEditView extends SmartView {
   #typeGroupClickHandler = (evt) => {
     evt.preventDefault();
     this.updateData({
-      destination: this.#getChangedDestination(evt.target.value)
+      destination: this.#getChangedLocation(evt.target.value)
     }, false);
   }
 
@@ -175,7 +175,7 @@ export default class EventEditView extends SmartView {
   #destinationChangeHandler = (evt) => {
     evt.preventDefault();
     this.updateData({
-      destination: this.#getChangedDestination(evt.target.value)
+      location: this.#getChangedLocation(evt.target.value)
     }, false);
   }
 
@@ -224,12 +224,12 @@ export default class EventEditView extends SmartView {
     return point;
   }
 
-  #getChangedDestination = (destinationName) => {
-    const allDestinations = locations();
+  #getChangedLocation = (locationName) => {
+    const allLocations = locations();
 
-    for (let i = 0; i < allDestinations.length; i++) {
-      if (allDestinations[i].name === destinationName) {
-        return allDestinations[i];
+    for (let i = 0; i < allLocations.length; i++) {
+      if (allLocations[i].name === locationName) {
+        return allLocations[i];
       }
     }
 

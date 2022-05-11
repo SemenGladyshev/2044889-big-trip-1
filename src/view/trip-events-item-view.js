@@ -3,9 +3,9 @@ import AbstractView from './abstract-view';
 import { eventTypes } from '../mock/event-types';
 
 const createTripEventTemplate = (event) => {
-  const {basePrice: price, dateStart: ISOFrom, dateEnd: ISOTo, destination, isFavorite: isFavorite, type} = event;
+  const {basePrice: price, dateStart: ISOFrom, dateEnd: ISOTo, location, isFavorite: isFavorite, type} = event;
 
-  const destinationName = destination.name;
+  const locationName = location.name;
 
   const dayStart = dayjs(ISOFrom).format('MMM D');
   const dateStart = dayjs(ISOFrom).format('YYYY-MM-DD');
@@ -75,7 +75,7 @@ const createTripEventTemplate = (event) => {
                 <div class="event__type">
                   <img class="event__type-icon" width="42" height="42" src="img/icons/${type}.png" alt="Event type icon">
                 </div>
-                <h3 class="event__title">${type} ${destinationName}</h3>
+                <h3 class="event__title">${type} ${locationName}</h3>
                 <div class="event__schedule">
                   <p class="event__time">
                     <time class="event__start-time" datetime="${DatetimeFrom}">${TimeFrom}</time>
