@@ -141,7 +141,7 @@ export default class AddEventItemView extends SmartView {
 
   #dateFromChangeHandler = ([userDate]) => {
     this.updateData({
-      dateTo: userDate.toISOString(),
+      dateFrom: userDate.toISOString(),
     });
   }
 
@@ -226,6 +226,15 @@ export default class AddEventItemView extends SmartView {
       offers: offerArray,
       type: 'taxi'
     };
+  }
+
+  static parsePointToData = (point) => ({...point,
+  });
+
+  static parseDataToPoint = (data) => {
+    const point = {...data};
+
+    return point;
   }
 
   #getChangedDestination = (locationName) => {

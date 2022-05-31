@@ -41,8 +41,8 @@ const generateTripEvent = () => {
   return {
     id: nanoid(),
     basePrice: generatePrice(),
-    dateStart: dates.start,
-    dateEnd: dates.end,
+    dateFrom: dates.start,
+    dateTo: dates.end,
     destination: locationsArray[getRandomInteger(0, locationsArray.length - 1)],
     isFavorite: Boolean(getRandomInteger(0, 1)),
     events: eventsArray,

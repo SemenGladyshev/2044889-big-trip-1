@@ -124,7 +124,7 @@ const eventTypes = () => ([
   },
 
   {
-    'type': 'restaraunt',
+    'type': 'restaurant',
     'offers': [
       {
         'id': 19,

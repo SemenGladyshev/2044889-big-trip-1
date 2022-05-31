@@ -7,8 +7,8 @@ const createHeaderView = (points) => {
   const cities = points.map((point) => point.city.currentCity.titleCity);
   let allPrice = null;
   points.forEach((point) => { allPrice += Number(point.startPrice); });
-  const dateBegin = dayjs(points[0].date.start).format('MMM D');
-  const dateEnd = dayjs(points[points.length - 1].date.end).format('MMM D');
+  const dateFrom = dayjs(points[0].date.start).format('MMM D');
+  const dateTo = dayjs(points[points.length - 1].date.end).format('MMM D');
 
   let tripTitles = '';
 
@@ -28,7 +28,7 @@ const createHeaderView = (points) => {
   return `<section class="trip-main__trip-info  trip-info">
             <div class="trip-info__main">
               <h1 class="trip-info__title">${ tripTitles }</h1>
-              <p class="trip-info__dates">${ dateBegin }&nbsp;&mdash;&nbsp;${ dateEnd }</p>
+              <p class="trip-info__dates">${ dateFrom }&nbsp;&mdash;&nbsp;${ dateTo }</p>
             </div>
             <p class="trip-info__cost">
               Total: &euro;&nbsp; ${ allPrice } <span class="trip-info__cost-value"</span>

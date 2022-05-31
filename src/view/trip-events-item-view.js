@@ -3,12 +3,12 @@ import AbstractView from './abstract-view';
 import { eventTypes } from '../mock/event-types';
 
 const createTripEventTemplate = (event) => {
-  const {basePrice: price, dateStart: ISOFrom, dateEnd: ISOTo, destination, isFavorite: isFavorite, type} = event;
+  const {basePrice: price, dateFrom: ISOFrom, dateTo: ISOTo, destination, isFavorite: isFavorite, type} = event;
 
   const destinationName = destination.name;
 
   const dayStart = dayjs(ISOFrom).format('MMM D');
-  const dateStart = dayjs(ISOFrom).format('YYYY-MM-DD');
+  const dateFrom = dayjs(ISOFrom).format('YYYY-MM-DD');
 
   const timeFrom = dayjs(ISOFrom).format('HH:mm');
   const datetimeFrom = dayjs(ISOFrom).format('YYYY-MM-DDTHH:mm');
@@ -25,7 +25,7 @@ const createTripEventTemplate = (event) => {
       return {
         days: resultDict.getUTCDate() - 1,
         hours: resultDict.getUTCHours(),
-        minutes: resultDict.getUTCMinutes,
+        minutes: resultDict.getUTCMinutes(),
       };
     };
 
@@ -71,7 +71,7 @@ const createTripEventTemplate = (event) => {
 
   return `<li class="trip-events__item">
               <div class="event">
-                <time class="event__date" datetime="${dateStart}">${dayStart}</time>
+                <time class="event__date" datetime="${dateFrom}">${dayStart}</time>
                 <div class="event__type">
                   <img class="event__type-icon" width="42" height="42" src="img/icons/${type}.png" alt="Event type icon">
                 </div>
